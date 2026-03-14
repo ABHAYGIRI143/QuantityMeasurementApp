@@ -10,7 +10,7 @@ public class QuantityMeasurementDatabaseRepository implements IQuantityMeasureme
 
     private static final String URL="jdbc:mysql://localhost:3306/quantity_measurement";
     private static final String USER="root";
-    private static final String PASSWORD="root";
+    private static final String PASSWORD="Microsoft@143";
 
     private Connection getConnection() throws SQLException{
         return DriverManager.getConnection(URL,USER,PASSWORD);
