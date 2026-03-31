@@ -1,0 +1,47 @@
+package org.example.controller;
+
+
+import org.example.dto.QuantityDTO;
+import org.example.service.IQuantityMeasurementService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/v1/quantities")
+public class QuantityMeasurementController {
+
+    @Autowired
+    private IQuantityMeasurementService service;
+
+    @GetMapping("/home")
+    public String home(){
+        return "App Started";
+    }
+    @PostMapping("/compare")
+    public boolean compare(@RequestBody QuantityDTO[] quantities){
+        return service.compare(quantities[0],quantities[1]);
+    }
+
+    @PostMapping("/convert")
+    public QuantityDTO convert(@RequestBody QuantityDTO quantity,
+                               @RequestParam String targetUnit){
+        return service.convert(quantity,targetUnit);
+    }
+
+    @PostMapping("/add")
+    public QuantityDTO add(@RequestBody QuantityDTO[] quantities){
+        return service.add(quantities[0],quantities[1]);
+    }
+
+    @PostMapping("/subtract")
+    public QuantityDTO subtract(@RequestBody QuantityDTO[] quantities){
+        return service.subtract(quantities[0],quantities[1]);
+    }
+
+    @PostMapping("/divide")
+    public double divide(@RequestBody QuantityDTO[] quantities){
+        return service.divide(quantities[0],quantities[1]);
+    }
+}

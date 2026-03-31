@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Daily Progress Log – BridgeLabz Training
 
 ## Overview
@@ -51,3 +52,6 @@ QuantityMeasureApp/
 +-- main/
 |   |
 |   +-- README.md/
+=======
+# QuantityMeasurementApp
+>>>>>>> feature/UC18-GoogleAuthneticationAndUserManagement
